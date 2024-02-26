@@ -51,13 +51,13 @@ public class DesertIslandPlaylist {
 	
 	public static void swapSongs(ArrayList<String> list, int song1, int song2) {
 		
-		String valueA = list.get(song1);
-		String valueB = list.get(song2);
+		String songName1 = list.get(song1);
+		String songName2 = list.get(song2);
 		
-		System.out.println("Swapping song " + (song1 + 1) + ": " + valueA + " and song " + (song2 + 1) + ": " + valueB);
+		System.out.println("Swapping song " + (song1 + 1) + ": " + songName1 + " and song " + (song2 + 1) + ": " + songName2);
 		
-		list.set(song1, valueB);
-		list.set(song2, valueA);
+		list.set(song1, songName1);
+		list.set(song2, songName2);
 		
 		System.out.println(list);
 			
