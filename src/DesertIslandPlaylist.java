@@ -6,22 +6,23 @@ public class DesertIslandPlaylist {
 	//methods
 	
 	public static void reportPlaylist(ArrayList<String> list) {
+		System.out.println();
 		System.out.println("Songs in current playlist: " + list);
 	}
 	
 	public static void removeSongs(ArrayList<String> list, int songNumber) {
-		
-		System.out.println();
-		System.out.println("Deleting extra songs...");
 
-	    if (songNumber > 5) {	
+	    if (songNumber > 5) {
+	    	
+	    	System.out.println();
+	    	System.out.println("Deleting extra songs...");
 	    	
 	      int i = songNumber - 1;
 	      
 	      while (i != 4) {
+	    	System.out.println("Deleting: " + list.get(i));
 	    	list.remove(i);
-	        i--;   
-	        System.out.println("Deleted: " + list.get(i));
+	        i--;
 	      }
 	      
 	    } else {
@@ -40,7 +41,7 @@ public class DesertIslandPlaylist {
 	    
 	    if (song1 == song2) {
 	    	System.out.println("Song " + song1 + " is same as song " + song2);
-			System.out.println("searching for another song to swap...");
+			System.out.println("Searching for other songs to swap...");
 	    	randomiseSongs(list, songNumber);
 	    } else {
 	    	swapSongs(list, song1, song2);
@@ -76,20 +77,24 @@ public class DesertIslandPlaylist {
 	    desertIslandPlaylist.add("Wildest Dreams ~ Taylor Swift");
 	    desertIslandPlaylist.add("Hotter Than Hell ~ Dua Lipa");
 	    desertIslandPlaylist.add("That Don't Impress Me Much ~ Shania Twain");
-	    desertIslandPlaylist.add("Yes And ~ Ariana Grande");
+	    desertIslandPlaylist.add("Africa ~ Toto");
 
 	    reportPlaylist(desertIslandPlaylist);
 
-	    int songNumber = desertIslandPlaylist.size();
+	    int currentSongNumber = desertIslandPlaylist.size();
+	    
+	    int maxSongNumber = 5;
 	    
 	    System.out.println();
-	    System.out.println("Number of extra songs: " + (songNumber - 5));
+	    System.out.println("Number of extra songs: " + (currentSongNumber - maxSongNumber));
 	    
-	    removeSongs(desertIslandPlaylist, songNumber);
+	    removeSongs(desertIslandPlaylist, currentSongNumber);
+	    
+	    reportPlaylist(desertIslandPlaylist);
 	    
 	    System.out.println();
 		System.out.println("Randomising songs...");
-	    randomiseSongs(desertIslandPlaylist, songNumber);
+	    randomiseSongs(desertIslandPlaylist, maxSongNumber);
 	    
 	}
 
